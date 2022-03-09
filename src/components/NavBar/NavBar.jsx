@@ -6,8 +6,14 @@ const NavBar = ({ user, handleLogout }) => {
       {user ?
         <nav>
           <ul>
-            <li>Welcome, {user.name}</li>
-            <li><Link to="/profiles">Profiles</Link></li>
+            <li>Home</li>
+            <li>Creatures</li> 
+            <li>Museum artifacts</li>
+            <li>Villagers</li>
+            <li>Furniture</li>
+            <li>Clothing</li>
+            <li><Link to="/create-list">Create a List</Link></li>
+            <li>Your Lists</li>
             <li><Link to="" onClick={handleLogout}>LOG OUT</Link></li>
             <li><Link to="/changePassword">Change Password</Link></li>
           </ul>
@@ -15,6 +21,12 @@ const NavBar = ({ user, handleLogout }) => {
       :
         <nav>
           <ul>
+            <li>Home</li>
+            <li>Creatures</li> 
+            <li>Museum artifacts</li>
+            <li>Villagers</li>
+            <li>Furniture</li>
+            <li>Clothing</li>
             <li><Link to="/login">Log In</Link></li>
             <li><Link to="/signup">Sign Up</Link></li>
           </ul>
