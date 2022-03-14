@@ -12,6 +12,7 @@ import ChangePassword from './pages/ChangePassword/ChangePassword'
 import CreateList from './pages/CreateList/CreateList'
 import Villagers from './pages/Villagers/Villagers.jsx'
 import { useEffect } from 'react'
+import VillagerShow from './pages/Villagers/VillagerShow'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -56,6 +57,10 @@ const App = () => {
         <Route
           path='/villagers'
           element={<Villagers />}
+        />
+        <Route
+          path='/villagers/:id'
+          element={<VillagerShow />}
         />
       </Routes>
     </>

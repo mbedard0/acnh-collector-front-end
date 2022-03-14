@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import * as villagersService from '../../services/villagersService'
+import { Link } from 'react-router-dom'
 
 const Villagers = (props) => {
   const [villagers, setVillagers] = useState([])
@@ -31,7 +32,12 @@ const Villagers = (props) => {
               <tbody key={villager.id}>
               <tr>
                 <th></th>
-                <td>{villager.name}</td>
+                <Link
+                  to={`/villagers/${villager.id}`}
+                  state={villager}
+                >
+                  <td>{villager.name}</td>
+                </Link>
                 <td>{villager.species}</td>
                 <td>{villager.personality}</td>
                 <td>{villager.gender}</td>
