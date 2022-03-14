@@ -1,5 +1,8 @@
 import { useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
+
+import * as authService from './services/authService'
+
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
 import Login from './pages/Login/Login'
@@ -7,11 +10,13 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import CreateList from './pages/CreateList/CreateList'
-import * as authService from './services/authService'
+import Villagers from './pages/Villagers/Villagers.jsx'
+import { useEffect } from 'react'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
   const navigate = useNavigate()
+
 
   const handleLogout = () => {
     authService.logout()
@@ -42,11 +47,15 @@ const App = () => {
         />
         <Route
           path="/changePassword"
-          element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin}/> : <Navigate to="/login" />}
+          element={user ? <ChangePassword handleSignupOrLogin={handleSignupOrLogin} /> : <Navigate to="/login" />}
         />
         <Route
           path="/create-list"
           element={<CreateList />}
+        />
+        <Route
+          path='/villagers'
+          element={<Villagers />}
         />
       </Routes>
     </>
