@@ -9,4 +9,12 @@ async function getAllProfiles() {
   return await res.json()
 }
 
-export { getAllProfiles }
+function getProfile(userId) {
+  return fetch(`${BASE_URL}/${userId}`, {
+    headers: { Authorization: `Bearer ${tokenService.getToken()}` }
+  })
+    .then(res => res.json())
+}
+
+
+export { getAllProfiles, getProfile }

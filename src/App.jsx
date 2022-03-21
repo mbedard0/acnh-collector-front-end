@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 
 import * as authService from './services/authService'
+import * as profileService from './services/profileService'
 
 import NavBar from './components/NavBar/NavBar'
 import Signup from './pages/Signup/Signup'
@@ -16,8 +17,13 @@ import VillagerShow from './pages/Villagers/VillagerShow'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
+  const [profile, setProfile] = useState()
   const navigate = useNavigate()
 
+  useEffect(() => {
+		profileService.getProfile(user._id)
+    .then((profile) => setProfile(profile))
+	},[user])
 
   const handleLogout = () => {
     authService.logout()
