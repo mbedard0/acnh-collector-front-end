@@ -7,7 +7,7 @@ const CreateList = (props) => {
 
   return (
     <div className='flex justify-center w-5/5'>
-      <CreateListForm />
+      <CreateListForm profile={props.profile}/>
     </div>
   )
 }

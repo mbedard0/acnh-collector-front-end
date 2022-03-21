@@ -58,7 +58,7 @@ const App = () => {
         />
         <Route
           path="/create-list"
-          element={<CreateList />}
+          element={<CreateList profile={profile}/>}
         />
         <Route
           path='/villagers'
