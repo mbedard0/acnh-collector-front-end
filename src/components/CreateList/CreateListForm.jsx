@@ -44,8 +44,15 @@ const CreateListForm = (props) => {
     return !(listName && description)
   }
 
+  // if (props.profile === undefined) {
+  //   return (
+  //     <>
+  //     </>
+  //   )
+  // } else {
     return (
       <>
+      {console.log(props)}
         <div
           autoComplete="off"
           className='max-w-4l'
@@ -85,5 +92,6 @@ const CreateListForm = (props) => {
       </>
     );
   }
+// }
 
 export default CreateListForm;

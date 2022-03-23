@@ -22,11 +22,11 @@ const App = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-		if (profile) {
+    if (user) {
       profileService.getProfile(user._id)
-    .then((profile) => setProfile(profile))
+      .then((profile) => setProfile(profile))
     }
-	},[profile])
+  }, [user])
 
   const handleLogout = () => {
     authService.logout()
@@ -61,7 +61,7 @@ const App = () => {
         />
         <Route
           path="/create-list"
-          element={<CreateList profile={profile}/>}
+          element={<CreateList profile={profile} />}
         />
         <Route
           path='/villagers'
@@ -71,7 +71,7 @@ const App = () => {
           path='/villagers/:id'
           element={<VillagerShow />}
         />
-        <Route 
+        <Route
           path='/lists'
           element={<YourLists />}
         />
