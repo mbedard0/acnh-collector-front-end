@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
+import { useEffect } from 'react'
 
 import * as authService from './services/authService'
 import * as profileService from './services/profileService'
@@ -12,8 +13,8 @@ import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import CreateList from './pages/CreateList/CreateList'
 import Villagers from './pages/Villagers/Villagers.jsx'
-import { useEffect } from 'react'
 import VillagerShow from './pages/Villagers/VillagerShow'
+import YourLists from './pages/YourLists/YourLists'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -21,9 +22,11 @@ const App = () => {
   const navigate = useNavigate()
 
   useEffect(() => {
-		profileService.getProfile(user._id)
+		if (profile) {
+      profileService.getProfile(user._id)
     .then((profile) => setProfile(profile))
-	},[user])
+    }
+	},[profile])
 
   const handleLogout = () => {
     authService.logout()
@@ -67,6 +70,10 @@ const App = () => {
         <Route
           path='/villagers/:id'
           element={<VillagerShow />}
+        />
+        <Route 
+          path='/lists'
+          element={<YourLists />}
         />
       </Routes>
     </>

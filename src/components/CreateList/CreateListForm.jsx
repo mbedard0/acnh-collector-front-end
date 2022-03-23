@@ -43,12 +43,7 @@ const CreateListForm = (props) => {
   const isFormInvalid = () => {
     return !(listName && description)
   }
-  if (props.profile === undefined) {
-    return (
-      <>
-      </>
-    )
-  } else {
+
     return (
       <>
         <div
@@ -90,6 +85,5 @@ const CreateListForm = (props) => {
       </>
     );
   }
-}
 
 export default CreateListForm;
