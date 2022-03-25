@@ -3,7 +3,7 @@ import YourListsTable from "../../components/YourListsTable/YourListsTable";
 const YourLists = (props) => {
   return (
     <>
-      <YourListsTable />
+      <YourListsTable profile={props.profile} />
     </>
   );
 }

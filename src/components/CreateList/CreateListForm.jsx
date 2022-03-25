@@ -52,7 +52,6 @@ const CreateListForm = (props) => {
   // } else {
     return (
       <>
-      {console.log(props)}
         <div
           autoComplete="off"
           className='max-w-4l'

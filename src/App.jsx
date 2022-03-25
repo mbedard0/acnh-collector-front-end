@@ -73,7 +73,7 @@ const App = () => {
         />
         <Route
           path='/lists'
-          element={<YourLists />}
+          element={<YourLists profile={profile}/>}
         />
       </Routes>
     </>

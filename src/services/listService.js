@@ -9,6 +9,16 @@ function create(listData) {
     },
     body: JSON.stringify(listData)
   })
-  .then(res => res.json())
+    .then(res => res.json())
 }
-export { create }
+
+function getUserLists(profileId, cb) {
+  return fetch(`${BASE_URL}/${profileId}`, {
+    headers: { Authorization: `Bearer ${tokenService.getToken()}` }
+  })
+    .then(res => res.json()
+      .then(value => cb(value)))
+}
+
+
+export { create, getUserLists }
