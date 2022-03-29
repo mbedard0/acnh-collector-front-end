@@ -65,11 +65,11 @@ const App = () => {
         />
         <Route
           path='/villagers'
-          element={<Villagers />}
+          element={<Villagers profile={profile}/>}
         />
         <Route
           path='/villagers/:id'
-          element={<VillagerShow />}
+          element={<VillagerShow profile={profile}/>}
         />
         <Route
           path='/lists'
