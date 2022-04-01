@@ -10,10 +10,10 @@ const NavBar = ({ user, handleLogout }) => {
             </div>
             <div class="flex-none">
               <ul class="menu menu-horizontal p-0">
-                <li><a>Creatures</a></li>
-                <li>Museum artifacts</li>
-                <li>Furniture</li>
-                <li>Clothing</li>
+                <li><Link>Creatures</Link></li>
+                <li><Link>Museum artifacts</Link></li>
+                <li><Link>Furniture</Link></li>
+                <li><Link>Clothing</Link></li>
                 <li><Link to="/villagers">Villagers</Link></li>
                 <li tabindex="0">
                   <a>
