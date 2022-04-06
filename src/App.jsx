@@ -19,6 +19,9 @@ import VillagerShow from './pages/Villagers/VillagerShow'
 import YourLists from './pages/YourLists/YourLists'
 import MuseumArtifacts from './pages/MuseumArtifacts/MuseumArtifacts'
 import Creatures from './pages/Creatures/Creatures'
+import Fish from './pages/Creatures/Fish/Fish'
+import Bugs from './pages/Creatures/Bugs/Bugs'
+import SeaCreatures from './pages/Creatures/SeaCreatures/SeaCreatures'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -83,7 +86,18 @@ const App = () => {
           path='/creatures'
           element={<Creatures profile={profile} />}
         />
-
+        <Route
+          path='/fish'
+          element={<Fish profile={profile} />}
+        />
+        <Route
+          path='/bugs'
+          element={<Bugs profile={profile} />}
+        />
+        <Route
+          path='/sea-creatures'
+          element={<SeaCreatures profile={profile} />}
+        />
         <Route
           path='/villagers'
           element={<Villagers profile={profile} />}

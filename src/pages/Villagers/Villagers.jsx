@@ -20,6 +20,7 @@ const Villagers = (props) => {
           <thead>
             <tr>
               <th></th>
+              {/* <th></th> */}
               <th>Name</th>
               <th>Species</th>
               <th>Personality</th>
@@ -32,6 +33,7 @@ const Villagers = (props) => {
               <tbody key={villager.id}>
               <tr>
                 <th></th>
+                {/* <td><img src={`${villager.image_url}`}/></td> */}
                 <Link
                   to={`/villagers/${villager.id}`}
                   state={villager}
