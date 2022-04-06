@@ -12,9 +12,13 @@ import Landing from './pages/Landing/Landing'
 import Profiles from './pages/Profiles/Profiles'
 import ChangePassword from './pages/ChangePassword/ChangePassword'
 import CreateList from './pages/CreateList/CreateList'
+import Furniture from './pages/Furniture/Furniture'
+import Clothing from './pages/Clothing/Clothing'
 import Villagers from './pages/Villagers/Villagers.jsx'
 import VillagerShow from './pages/Villagers/VillagerShow'
 import YourLists from './pages/YourLists/YourLists'
+import MuseumArtifacts from './pages/MuseumArtifacts/MuseumArtifacts'
+import Creatures from './pages/Creatures/Creatures'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -24,7 +28,7 @@ const App = () => {
   useEffect(() => {
     if (user) {
       profileService.getProfile(user._id)
-      .then((profile) => setProfile(profile))
+        .then((profile) => setProfile(profile))
     }
   }, [user])
 
@@ -64,16 +68,33 @@ const App = () => {
           element={<CreateList profile={profile} />}
         />
         <Route
+          path='/furniture'
+          element={<Furniture profile={profile} />}
+        />
+        <Route
+          path='/clothing'
+          element={<Clothing profile={profile} />}
+        />
+        <Route
+          path='/museum-artifacts'
+          element={<MuseumArtifacts profile={profile} />}
+        />
+        <Route
+          path='/creatures'
+          element={<Creatures profile={profile} />}
+        />
+
+        <Route
           path='/villagers'
-          element={<Villagers profile={profile}/>}
+          element={<Villagers profile={profile} />}
         />
         <Route
           path='/villagers/:id'
-          element={<VillagerShow profile={profile}/>}
+          element={<VillagerShow profile={profile} />}
         />
         <Route
           path='/lists'
-          element={<YourLists profile={profile}/>}
+          element={<YourLists profile={profile} />}
         />
       </Routes>
     </>
