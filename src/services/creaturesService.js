@@ -19,4 +19,14 @@ async function getAllBugs() {
   }
 }
 
-export { getAllFish, getAllBugs}
+async function getAllSeaCreatures() {
+  try {
+    const response = await fetch(`${BASE_URL}/sea`)
+    return response.json()
+  } catch(e) {
+    console.log(e)
+  }
+}
+
+
+export { getAllFish, getAllBugs, getAllSeaCreatures}
