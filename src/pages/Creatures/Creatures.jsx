@@ -5,8 +5,18 @@ import * as creaturesService from '../../services/creaturesService'
 const Creatures = (props) => {
   return (
     <>
-      <div className='link link-primary'>
-        <Link to='/fish'>Fish</Link>
+      <div>
+        <ul>
+          <li className='link link-primary'>
+            <Link to='/fish'>Fish</Link>
+          </li>
+          <li className='link link-primary'>
+            <Link to='/bugs'>Bugs</Link>
+          </li>
+          <li className='link link-primary'>
+            <Link to='/sea-creatures'>Sea Creatures</Link>
+          </li>
+        </ul>
       </div>
     </>
   );
