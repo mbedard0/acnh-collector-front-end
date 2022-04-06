@@ -22,6 +22,7 @@ import Creatures from './pages/Creatures/Creatures'
 import Fish from './pages/Creatures/Fish/Fish'
 import Bugs from './pages/Creatures/Bugs/Bugs'
 import SeaCreatures from './pages/Creatures/SeaCreatures/SeaCreatures'
+import Fossils from './pages/MuseumArtifacts/Fossils/Fossils'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -98,6 +99,11 @@ const App = () => {
           path='/sea-creatures'
           element={<SeaCreatures profile={profile} />}
         />
+        <Route
+          path='/fossils'
+          element={<Fossils profile={profile} />}
+        />
+
         <Route
           path='/villagers'
           element={<Villagers profile={profile} />}
