@@ -12,7 +12,6 @@ const Clothing = (props) => {
     getClothing()
   }, [])
 
-
   return (
     <>
     {clothing.map(clothes => {

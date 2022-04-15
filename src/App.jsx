@@ -103,7 +103,10 @@ const App = () => {
           path='/fossils'
           element={<Fossils profile={profile} />}
         />
-
+        <Route
+          path='/furniture'
+          element={<Furniture profile={profile} />}
+        />
         <Route
           path='/villagers'
           element={<Villagers profile={profile} />}
