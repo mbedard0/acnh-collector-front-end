@@ -5,9 +5,21 @@ async function getAllFossils() {
   try {
     const response = await fetch(`${BASE_URL}/fossils`)
     return response.json()
-  } catch(e) {
+  } catch (e) {
     console.log(e)
   }
 }
 
-export { getAllFossils }
+async function getAllArt() {
+  try {
+    const response = await fetch(`${BASE_URL}/art`)
+    return response.json()
+  } catch (e) {
+    console.log(e)
+  }
+}
+
+export { 
+  getAllFossils,
+  getAllArt
+}

@@ -18,6 +18,7 @@ import Villagers from './pages/Villagers/Villagers.jsx'
 import VillagerShow from './pages/Villagers/VillagerShow'
 import YourLists from './pages/YourLists/YourLists'
 import MuseumArtifacts from './pages/MuseumArtifacts/MuseumArtifacts'
+import Art from './pages/MuseumArtifacts/Art/Art'
 import Creatures from './pages/Creatures/Creatures'
 import Fish from './pages/Creatures/Fish/Fish'
 import Bugs from './pages/Creatures/Bugs/Bugs'
@@ -102,6 +103,10 @@ const App = () => {
         <Route
           path='/fossils'
           element={<Fossils profile={profile} />}
+        />
+        <Route
+          path='/artwork'
+          element={<Art profile={profile}/>}
         />
         <Route
           path='/furniture'
