@@ -20,5 +20,20 @@ function getUserLists(profileId, cb) {
       .then(value => cb(value)))
 }
 
+function addVillager(data) {
+  return fetch(`${BASE_URL}/${data.list}`, {
+    method: 'PATCH',
+    headers: {
+      'Authorization': `Bearer ${tokenService.getToken()}`, 'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data)
+  })
+    .then(res => res.json())
+}
 
-export { create, getUserLists }
+
+export {
+  create,
+  getUserLists,
+  addVillager
+}

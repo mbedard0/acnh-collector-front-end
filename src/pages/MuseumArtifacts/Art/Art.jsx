@@ -12,7 +12,6 @@ const Art = (props) => {
     getArtwork()
   }, [])
 
-
   return (
     <>
       {artwork.map(art => {

@@ -8,8 +8,8 @@ const Villagers = (props) => {
   useEffect(() => {
     async function getVillagers() {
       const allVillagers = await villagersService.getAllVillagers()
-      setVillagers(allVillagers)    
-    } 
+      setVillagers(allVillagers)
+    }
     getVillagers()
   }, [])
 
@@ -31,25 +31,27 @@ const Villagers = (props) => {
           {villagers.map(villager => {
             return (
               <tbody key={villager.id}>
-              <tr>
-                <th></th>
-                {/* <td><img src={`${villager.image_url}`}/></td> */}
-                <Link
-                  to={`/villagers/${villager.id}`}
-                  state={villager}
-                >
-                  <td>{villager.name}</td>
-                </Link>
-                <td>{villager.species}</td>
-                <td>{villager.personality}</td>
-                <td>{villager.gender}</td>
-                <td>{villager.birthday_month} {villager.birthday_day}</td>
-              </tr>
-                </tbody>
-        )
-        })}
-      </table>
-    </div>
+                <tr>
+                  <th></th>
+                  {/* <td><img src={`${villager.image_url}`}/></td> */}
+                  <td>
+                    <Link
+                      to={`/villagers/${villager.id}`}
+                      state={villager}
+                    >
+                      {villager.name}                  
+                    </Link>
+                  </td>
+                  <td>{villager.species}</td>
+                  <td>{villager.personality}</td>
+                  <td>{villager.gender}</td>
+                  <td>{villager.birthday_month} {villager.birthday_day}</td>
+                </tr>
+              </tbody>
+            )
+          })}
+        </table>
+      </div>
 
     </>
   );

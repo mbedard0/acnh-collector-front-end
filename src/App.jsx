@@ -21,9 +21,11 @@ import MuseumArtifacts from './pages/MuseumArtifacts/MuseumArtifacts'
 import Art from './pages/MuseumArtifacts/Art/Art'
 import Creatures from './pages/Creatures/Creatures'
 import Fish from './pages/Creatures/Fish/Fish'
+import FishShow from './pages/Creatures/Fish/FishShow'
 import Bugs from './pages/Creatures/Bugs/Bugs'
 import SeaCreatures from './pages/Creatures/SeaCreatures/SeaCreatures'
 import Fossils from './pages/MuseumArtifacts/Fossils/Fossils'
+import ListShow from './pages/YourLists/ListShow'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -92,6 +94,10 @@ const App = () => {
           path='/fish'
           element={<Fish profile={profile} />}
         />
+        <Route 
+          path='/fish/:id'
+          element={<FishShow profile={profile} />}
+        />
         <Route
           path='/bugs'
           element={<Bugs profile={profile} />}
@@ -123,6 +129,10 @@ const App = () => {
         <Route
           path='/lists'
           element={<YourLists profile={profile} />}
+        />
+        <Route
+          path='/lists/:id'
+          element={<ListShow profile={profile} />}
         />
       </Routes>
     </>

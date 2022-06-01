@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import * as listService from '../../services/listService'
+import { Link } from 'react-router-dom'
 
 const YourListsTable = (props) => {
   const [lists, setLists] = useState([])
@@ -25,7 +26,12 @@ const YourListsTable = (props) => {
           {lists.map(list => {
             return (
               <>
-              {list.listName}
+                <Link
+                  to={`/lists/${list._id}`}
+                  state={list}
+                >
+                  {list.listName}
+                </Link>
               </>
             )
           })}

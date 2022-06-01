@@ -1,26 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'
-import * as listService from '../../services/listService'
 
-const VillagerShow = (props) => {
-  const navigate = useNavigate()
+const FishShow = (props) => {
   const location = useLocation()
   const [data, setData] = useState({
-    villagerId: location.state.id,
+    fishNumber: location.state.number,
     profile: '',
     list: ''
   })
-
-  const handleAdd = async e => {
-    e.preventDefault()
-    try {
-      const finalData = await setData({ ...data, list: e.target.value })
-      listService.addVillager(finalData)
-    } catch (e) {
-      console.log(e)
-    }
-  }
 
   useEffect(() => {
     if (props.profile !== undefined) {
@@ -31,12 +19,10 @@ const VillagerShow = (props) => {
     }
   }, [props.profile])
 
-
-
-  return (
+  return ( 
     <>
-      {/* {console.log(location.state)} */}
-      <div className='flex'>
+    {console.log(location.state)}
+    <div className='flex'>
         <div>
           {location.state.name}
         </div>
@@ -67,4 +53,4 @@ const VillagerShow = (props) => {
   );
 }
 
-export default VillagerShow;
+export default FishShow;

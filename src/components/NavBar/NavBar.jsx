@@ -29,7 +29,7 @@ const NavBar = ({ user, handleLogout }) => {
                 </a>
                 <ul class="p-2 shadow bg-base-100 rounded-box dropdown-content">
                   <li><Link to="/fossils">Fossils</Link></li>
-                  <li>Art</li>
+                  <li><Link to='/artwork'>Art</Link></li>
                 </ul>
               </li>
               <li><Link to='/furniture'>Furniture</Link></li>
