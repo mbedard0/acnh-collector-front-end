@@ -31,6 +31,7 @@ const Villagers = (props) => {
           {villagers.map(villager => {
             return (
               <tbody key={villager.id}>
+                {/* {console.log(villager)} */}
                 <tr>
                   <th></th>
                   {/* <td><img src={`${villager.image_url}`}/></td> */}

@@ -40,25 +40,34 @@ const Fish = (props) => {
                       to={`/fish/${fish.number}`}
                       state={fish}
                     >
-                      {fish.name}
+                      <div class="flex items-center space-x-3">
+                        <div class="avatar">
+                          <div class="mask mask-squircle w-12 h-12">
+                            <img src={fish.image_url} alt="fish graphic" />
+                          </div>
+                        </div>
+                        <div class="font-bold">
+                          {fish.name}
+                        </div>
+                      </div>
                     </Link>
                   </td>
                   <td>{fish.location}</td>
                   <td>
-                      <div>
-                        North: {fish.availability_north[0].months}
-                      </div>
-                      <div>
-                        South: {fish.availability_south[0].months}
-                      </div>
+                    <div>
+                      North: {fish.availability_north[0].months}
+                    </div>
+                    <div>
+                      South: {fish.availability_south[0].months}
+                    </div>
                   </td>
                   <td>
-                      <div>
-                        North: {fish.availability_north[0].time}
-                      </div>
-                      <div>
-                        South: {fish.availability_south[0].time}
-                      </div>
+                    <div>
+                      North: {fish.availability_north[0].time}
+                    </div>
+                    <div>
+                      South: {fish.availability_south[0].time}
+                    </div>
                   </td>
 
                 </tr>

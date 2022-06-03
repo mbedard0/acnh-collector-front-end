@@ -19,10 +19,13 @@ const FishShow = (props) => {
     }
   }, [props.profile])
 
-  return ( 
+  return (
     <>
-    {console.log(location.state)}
-    <div className='flex'>
+      {console.log(location.state)}
+      <div className='flex'>
+        <div>
+          <img src={`${location.state.render_url}`}/>
+        </div>
         <div>
           {location.state.name}
         </div>

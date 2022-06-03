@@ -35,10 +35,18 @@ const VillagerShow = (props) => {
 
   return (
     <>
-      {/* {console.log(location.state)} */}
+      {console.log(location.state)}
       <div className='flex'>
         <div>
-          {location.state.name}
+        <img src={`${location.state.image_url}`}/>
+        </div>
+        <div>
+          <div class="font-bold">
+            {location.state.name}
+          </div>
+          <div class="text-sm opacity-50">
+            {location.state.quote}
+          </div>
         </div>
         {props.profile ?
           <div>
