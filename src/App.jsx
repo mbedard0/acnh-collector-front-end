@@ -26,6 +26,7 @@ import Bugs from './pages/Creatures/Bugs/Bugs'
 import SeaCreatures from './pages/Creatures/SeaCreatures/SeaCreatures'
 import Fossils from './pages/MuseumArtifacts/Fossils/Fossils'
 import ListShow from './pages/YourLists/ListShow'
+import BugShow from './pages/Creatures/Bugs/BugShow'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -101,6 +102,10 @@ const App = () => {
         <Route
           path='/bugs'
           element={<Bugs profile={profile} />}
+        />
+        <Route
+          path='/bugs/:id'
+          element={<BugShow profile={profile} />}
         />
         <Route
           path='/sea-creatures'

@@ -21,10 +21,12 @@ const FishShow = (props) => {
 
   return (
     <>
-      {console.log(location.state)}
+      {/* {console.log(location.state)} */}
       <div className='flex'>
-        <div>
-          <img src={`${location.state.render_url}`}/>
+        <div class="avatar">
+          <div class="w-24 rounded-full">
+            <img class="" src={`${location.state.render_url}`} />
+          </div>
         </div>
         <div>
           {location.state.name}
