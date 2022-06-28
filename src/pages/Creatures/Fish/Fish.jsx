@@ -46,7 +46,7 @@ const Fish = (props) => {
                             <img src={fish.image_url} alt="fish graphic" />
                           </div>
                         </div>
-                        <div class="font-bold">
+                        <div className="font-bold">
                           {fish.name}
                         </div>
                       </div>

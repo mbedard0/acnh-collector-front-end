@@ -27,6 +27,7 @@ import SeaCreatures from './pages/Creatures/SeaCreatures/SeaCreatures'
 import Fossils from './pages/MuseumArtifacts/Fossils/Fossils'
 import ListShow from './pages/YourLists/ListShow'
 import BugShow from './pages/Creatures/Bugs/BugShow'
+import SeaCreaturesShow from './pages/Creatures/SeaCreatures/SeaCreaturesShow'
 
 const App = () => {
   const [user, setUser] = useState(authService.getUser())
@@ -110,6 +111,10 @@ const App = () => {
         <Route
           path='/sea-creatures'
           element={<SeaCreatures profile={profile} />}
+        />
+        <Route
+          path='/sea-creatures/:id'
+          element={<SeaCreaturesShow profile={profile} />}
         />
         <Route
           path='/fossils'

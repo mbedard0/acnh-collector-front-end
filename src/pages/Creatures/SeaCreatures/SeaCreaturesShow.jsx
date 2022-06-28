@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { Navigate, useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
-const BugShow = (props) => {
+const SeaCreaturesShow = (props) => {
   const location = useLocation()
   const [data, setData] = useState({
-    bugNumber: location.state.number,
+    fishNumber: location.state.number,
     profile: '',
     list: ''
   })
+
   useEffect(() => {
     if (props.profile !== undefined) {
       setData({
@@ -18,13 +19,13 @@ const BugShow = (props) => {
     }
   }, [props.profile])
 
-
   return (
     <>
+    {console.log(location.state)}
       <div className='flex'>
         <div class="avatar">
           <div class="w-24 rounded-full">
-            <img class="" src={`${location.state.render_url}`} />
+            {/* <img class="" src={`${location.state.render_url}`} /> */}
           </div>
         </div>
         <div>
@@ -57,5 +58,4 @@ const BugShow = (props) => {
   );
 }
 
-
-export default BugShow;
+export default SeaCreaturesShow;

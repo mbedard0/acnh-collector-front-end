@@ -46,7 +46,7 @@ const Bugs = (props) => {
                             <img src={bug.image_url} alt="bug graphic" />
                           </div>
                         </div>
-                        <div>
+                        <div className="font-bold">
                           {bug.name}
                         </div>
                       </div>
